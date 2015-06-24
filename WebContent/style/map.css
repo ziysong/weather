@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+.mapContainer{
+	position:absolute;
+	top:10px;
+	left:20px;
+	width:330px;
+	height:550px;
+}

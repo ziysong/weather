@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.logging.Log;
+
 import com.szy.weather.util.WeatherUtils;
 
 @WebServlet(urlPatterns={"/realtimeWeatherServlet"})    
@@ -23,7 +25,7 @@ public class RealTimeWeatherServlet extends HttpServlet{
 		PrintWriter out = response.getWriter();
 		
 		String realTimeWeatherData = getRealTimeWeather();
-System.out.println(realTimeWeatherData);		
+System.out.println(realTimeWeatherData);
 		out.print(realTimeWeatherData);
 	}
 	

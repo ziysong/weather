@@ -11,21 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.szy.weather.util.WeatherUtils;
 
-@WebServlet(urlPatterns={"/weatherServlet"})
-public class WeatherServlet extends HttpServlet{
+@WebServlet(urlPatterns = { "/weatherServlet" })
+public class WeatherServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
-		
-		String city = request.getParameter("queryCity");
+
+		String city = request.getParameter("queryCity").trim();
 		String weatherData = WeatherUtils.getWeather(city);
 		out.print(weatherData);
 	}
-
 
 }

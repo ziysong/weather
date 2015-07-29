@@ -31,8 +31,7 @@
 <!--ajax请求weather信息-->
 <script type="text/javascript">
 	$("#button").click(function(){
-		/* $("#weatherResult").load("weatherServlet", $("#weatherForm").serializeArray()); */
-		$.get("weatherServlet", $("#weatherForm").serializeArray(),
+		$.get("${pageContext.request.contextPath}/weatherServlet", $("#weatherForm").serializeArray(),
 		function(data, statusText){
 			$("#weatherResult").empty();
 			$("#weatherResult").append(data);
